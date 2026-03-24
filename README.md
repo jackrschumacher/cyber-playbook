@@ -8,14 +8,14 @@ An Ansbile playbook that installs a variety of tools for cybersecurity exercises
 sudo apt install ansible -y
 ```
 
-## Running the playbook
+## `install-packages.yaml`
 
 ### Check that packages are installed
 
 Navigate to the `cyber-playbook` folder and run the following command:
 
 ```bash
-ansible-playbook cyber-playbook.yaml -K
+ansible-playbook install-packages.yaml -K
 ```
 
 ### Update existing packages
@@ -23,7 +23,7 @@ ansible-playbook cyber-playbook.yaml -K
 Navigate to the `cyber-playbook` folder and run the following command:
 
 ```bash
-ansible-playbook cyber-playbook.yaml -K -e 
+ansible-playbook install-packages.yaml -K -e "app_state=latest"
 ```
 
 ### 
