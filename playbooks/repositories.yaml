@@ -1,0 +1,11 @@
+---
+- name: Clone cybersecurity repositories
+  hosts: machines
+
+  tasks:
+    - name: Clone cyber-notes repo from GitHub
+      git:
+        repo: 'https://github.com/jackrschumacher/cyber-notes'
+        dest: "{{ repo_destination }}/cyber-notes"
+        update: yes
+
