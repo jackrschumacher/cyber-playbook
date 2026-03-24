@@ -17,9 +17,10 @@
           - tmux
           - nano
           - sed
+          - wireshark
+          # Install both ophcrack gui and ophcrack-cli
+          - ophcrack 
+          - ophcrack-cli
         state: present
-      register: apt_results
-    - name: Show apt updates
-      debug:
-        var: apt_results.stdout_lines
+      
       
