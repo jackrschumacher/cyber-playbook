@@ -18,4 +18,8 @@
           - nano
           - sed
         state: present
+      register: apt_results
+    - name: Show apt updates
+      debug:
+        var: apt_results.stdout_lines
       
