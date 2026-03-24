@@ -1,0 +1,21 @@
+---
+- name: Setup cybersecurity enviroment
+  hosts: localhost
+  connection: local
+  become: yes
+
+  tasks:
+    - name: Check the state of the system apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 1800 #Only check if cache hasnt been checked in last 30 minutes
+    - name: Install cybersecurity tools
+      apt: 
+        pkg: 
+          - hashcat
+          - nmap
+          - tmux
+          - nano
+          - sed
+        state: present
+      
