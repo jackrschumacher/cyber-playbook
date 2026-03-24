@@ -13,6 +13,6 @@ sudo apt install ansible -y
 Navigate to the `cyber-playbook` folder and run the following command:
 
 ```bash
-ansible-playbook cyber-playb
+ansible-playbook cyber-playbook.yaml -K
 ```
 
