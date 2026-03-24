@@ -21,6 +21,9 @@
           # Install both ophcrack gui and ophcrack-cli
           - ophcrack 
           - ophcrack-cli
-        state: present
+          - git
+          - python3
+          - python3-pip
+        state: "{{app_state | default('present')}}" # Defaults to "present" instead of updating
       
       
