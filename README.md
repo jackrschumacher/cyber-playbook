@@ -5,6 +5,7 @@ An Ansbile playbook that installs a variety of tools for cybersecurity exercises
 ## Installing Ansible
 
 ```bash
+sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible -y
 ```
 
@@ -15,7 +16,7 @@ sudo apt install ansible -y
 Navigate to the `cyber-playbook` folder and run the following command:
 
 ```bash
-ansible-playbook install-packages.yaml -K
+ansible-playbook playbooks/install-packages.yaml -K -l "rpi5-8"
 ```
 
 ### Update existing packages
@@ -23,7 +24,7 @@ ansible-playbook install-packages.yaml -K
 Navigate to the `cyber-playbook` folder and run the following command:
 
 ```bash
-ansible-playbook install-packages.yaml -K -e "app_state=latest"
+ansible-playbook playbooks/install-packages.yaml -K -e "app_state=latest" -l "[host]"
 ```
 
-### 
+### `cyber-repositories.yaml`
