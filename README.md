@@ -8,6 +8,10 @@ An Ansbile playbook that installs a variety of tools for cybersecurity exercises
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible -y
 ```
+## General commands
+
+`-v, -vv, -vvv` - Increasing levels of verbosity in the terminal
+
 
 ## `install-packages.yaml`
 
