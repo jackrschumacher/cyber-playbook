@@ -9,23 +9,47 @@
       apt:
         update_cache: yes
         cache_valid_time: 1800 #Only check if cache hasnt been checked in last 30 minutes
-    - name: Install cybersecurity tools
+    - name: Install general apt packages
       apt: 
         pkg: 
-          - hashcat
-          - nmap
           - tmux
           - nano
           - sed
-          - wireshark
-          # Install both ophcrack gui and ophcrack-cli
-          - ophcrack 
-          - ophcrack-cli
           - git
-          - python3
-          - python3-pip
           - tree
           - konsole
         state: "{{app_state | default('present')}}" # Defaults to "present" instead of updating
+    - name: Install python and deps using apt
+      apt: 
+        pkg: 
+         - pipx
+         - python3
+         - python3-pip
+         - python3-venv 
+        state: "{{app_state | default('present')}}"
+    - name: Install chepy globablly using pipx
+      ansible.builtin.command: pipx install chepy
+      environment: 
+        # These variables force pipx to install globally instead of in /root/.local/
+        PIPX_HOME: /opt/pipx
+        PIPX_BIN_DIR: /usr/local/bin
+      args:
+        # This makes the task idempotent: it skips running if chepy already exists
+        creates: /usr/local/bin/chepy
+    - name: Install password cracking tools using apt
+      apt: 
+        pkg:
+          - hashcat
+          # Install both ophcrack gui and ophcrack-cli
+          - ophcrack 
+          - ophcrack-cli
+        state: "{{app_state | default('present')}}"
+    - name: Install network tools uisng apt
+      apt: 
+        pkg:
+          - wireshark
+          - nmap
+        state: "{{app_state | default('present')}}"
+
       
       
