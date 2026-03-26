@@ -48,6 +48,12 @@
           - ophcrack 
           - ophcrack-cli
         state: "{{app_state | default('present')}}"
+    - name: Install password cracking tools using snap
+      community.general.snap:
+        name:
+          - john-the-ripper
+      when:
+        - snap_check.stat.exists
     - name: Install network tools uisng apt
       apt: 
         pkg:
