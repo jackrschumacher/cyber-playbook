@@ -9,6 +9,10 @@
       apt:
         update_cache: yes
         cache_valid_time: 1800 #Only check if cache hasnt been checked in last 30 minutes
+    - name: Check Snap installation
+      ansible.builtin.stat: 
+        path: /usr/bin/snap
+      register: snap_check
     - name: Install general apt packages
       apt: 
         pkg: 
@@ -50,6 +54,11 @@
           - wireshark
           - nmap
         state: "{{app_state | default('present')}}"
-
+    - name: Install network tools using snap
+      community.general.snap:
+        name:
+          - amass
+      when:
+        - snap_check.stat.exists
       
       
