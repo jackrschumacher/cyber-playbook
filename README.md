@@ -36,5 +36,3 @@ Navigate to the `cyber-playbook` folder and run the following command:
 ```bash
 ansible-playbook playbooks/install-packages.yaml -K -e "app_state=latest" -l "[host]"
 ```
-
-## `cyber-repositories.yaml`
