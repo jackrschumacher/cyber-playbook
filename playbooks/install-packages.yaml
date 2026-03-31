@@ -47,6 +47,7 @@
           # Install both ophcrack gui and ophcrack-cli
           - ophcrack 
           - ophcrack-cli
+          - hashid
         state: "{{app_state | default('present')}}"
     - name: Install password cracking tools using snap
       community.general.snap:
