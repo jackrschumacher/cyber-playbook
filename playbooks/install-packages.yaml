@@ -67,5 +67,11 @@
           - amass
       when:
         - snap_check.stat.exists
+    - name: Install log analysis tools using apt
+      apt: 
+        pkg:
+          - binutils
+          - libimage-exiftool-perl
+        state: "{{app_state | default('present')}}"
       
       
