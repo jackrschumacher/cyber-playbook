@@ -72,6 +72,7 @@
         pkg:
           - binutils
           - libimage-exiftool-perl
+          - binwalk
         state: "{{app_state | default('present')}}"
       
       
