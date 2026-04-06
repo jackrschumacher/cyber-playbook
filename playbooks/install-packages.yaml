@@ -73,6 +73,7 @@
           - binutils
           - libimage-exiftool-perl
           - binwalk
+          - lnav
         state: "{{app_state | default('present')}}"
       
       

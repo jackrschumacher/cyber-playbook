@@ -26,7 +26,7 @@ Use the latest stable version on the [releases page](https://github.com/jackrsch
 Navigate to the `cyber-playbook` folder and run the following command:
 
 ```bash
-ansible-playbook playbooks/install-packages.yaml -K -l "rpi5-8"
+ansible-playbook playbooks/install-packages.yaml -K -l "[host]"
 ```
 
 ### Update existing packages
