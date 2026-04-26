@@ -21,7 +21,7 @@
           - sed
           - git
           - tree
-          - konsole
+          - hcxtools
         state: "{{app_state | default('present')}}" # Defaults to "present" instead of updating
     - name: Install python and deps using apt
       apt: 

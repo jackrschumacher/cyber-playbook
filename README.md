@@ -1,5 +1,7 @@
 # cyber-playbook
 
+[![GitHub Release](https://img.shields.io/github/v/release/jackrschumacher/cyber-playbook)](https://github.com/jackrschumacher/cyber-playbook/releases) [![Ansible Requirement](https://img.shields.io/badge/ansible->=_2.14-000000?style=flat&logo=ansible&logoColor=white)](https://docs.ansible.com/ansible/latest/index.html)
+
 An Ansbile playbook that installs a variety of tools for cybersecurity exercises
 
 ## Installing Ansible
